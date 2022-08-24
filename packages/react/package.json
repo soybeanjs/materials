@@ -1,0 +1,15 @@
+{
+  "name": "@soybeanjs/react-material",
+  "version": "0.0.1",
+  "description": "react components material",
+  "author": "Soybean <honghuangdc@gmail.com> (https://github.com/honghuangdc)",
+  "license": "MIT",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {},
+  "peerDependencies": {},
+  "devDependencies": {}
+}

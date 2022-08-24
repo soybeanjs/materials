@@ -1,0 +1,22 @@
+{
+  "name": "@soybeanjs/material",
+  "version": "0.0.1",
+  "private": true,
+  "description": "material",
+  "author": "Soybean <honghuangdc@gmail.com> (https://github.com/honghuangdc)",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "pnpm -r run stub",
+    "lint": "eslint .",
+    "test": "pnpm -r run test",
+    "release": "bumpp package.json packages/*/package.json --commit --push --tag && pnpm -r publish --access public"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@soybeanjs/eslint-config": "^0.2.10",
+    "@types/node": "^18.7.4",
+    "bumpp": "^8.2.1",
+    "eslint": "^8.22.0",
+    "typescript": "^4.7.4"
+  }
+}
