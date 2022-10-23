@@ -1,0 +1,16 @@
+{
+  "name": "@soybeanjs/test-template-react",
+  "version": "0.0.1",
+  "private": true,
+  "description": "react components material",
+  "author": "Soybean <honghuangdc@gmail.com> (https://github.com/honghuangdc)",
+  "license": "MIT",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {},
+  "peerDependencies": {},
+  "devDependencies": {}
+}

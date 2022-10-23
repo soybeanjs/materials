@@ -1,0 +1,30 @@
+{
+  "name": "@soybeanjs/test-template-vue3",
+  "version": "0.0.1",
+  "private": true,
+  "description": "vue3 components material",
+  "author": "Soybean <honghuangdc@gmail.com> (https://github.com/honghuangdc)",
+  "license": "MIT",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "dev": "vite"
+  },
+  "dependencies": {
+    "@soybeanjs/vue-materials": "workspace:*",
+    "vue": "^3.2.39"
+  },
+  "devDependencies": {
+    "@unocss/preset-uno": "^0.45.21",
+    "@unocss/vite": "^0.45.21",
+    "@vitejs/plugin-vue": "^3.1.0",
+    "@vitejs/plugin-vue-jsx": "^2.0.1",
+    "eslint-config-soybeanjs-vue": "^0.1.0",
+    "typescript": "^4.8.3",
+    "unplugin-vue-macros": "^0.11.2",
+    "vite": "^3.1.1"
+  }
+}

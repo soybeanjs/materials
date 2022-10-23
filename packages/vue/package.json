@@ -1,15 +1,45 @@
 {
-  "name": "@soybeanjs/vue-material",
+  "name": "@soybeanjs/vue-materials",
   "version": "0.0.1",
-  "description": "vue components material",
+  "description": "vue2 and vue3 components material",
   "author": "Soybean <honghuangdc@gmail.com> (https://github.com/honghuangdc)",
   "license": "MIT",
-  "main": "index.js",
-  "types": "index.d.ts",
+  "main": "src",
   "files": [
     "index.js"
   ],
-  "dependencies": {},
-  "peerDependencies": {},
-  "devDependencies": {}
+  "scripts": {
+    "build": "vite build",
+    "test": "npm run test3",
+    "test2": "vue-demi-switch 2 vue2 && jest",
+    "test3": "vue-demi-switch 3 && jest"
+  },
+  "dependencies": {
+    "colord": "^2.9.3",
+    "vue-demi": "^0.13.11"
+  },
+  "peerDependencies": {
+    "@vue/composition-api": "^1.7.0",
+    "vue": "^2.0.0 || >=3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@vue/composition-api": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@unocss/preset-mini": "^0.45.29",
+    "@unocss/preset-uno": "^0.45.29",
+    "@unocss/transformer-compile-class": "^0.45.29",
+    "@unocss/vite": "^0.45.29",
+    "@vitejs/plugin-vue": "^3.1.2",
+    "@vitejs/plugin-vue-jsx": "^2.0.1",
+    "eslint": "^8.25.0",
+    "eslint-config-soybeanjs-vue": "^0.1.0",
+    "typescript": "^4.8.4",
+    "vite": "^3.1.8",
+    "vite-plugin-dts": "^1.6.6",
+    "vue": "^3.2.41",
+    "vue2": "npm:vue@3"
+  }
 }

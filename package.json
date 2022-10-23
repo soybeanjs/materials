@@ -11,12 +11,11 @@
     "test": "pnpm -r run test",
     "release": "bumpp package.json packages/*/package.json --commit --push --tag && pnpm -r publish --access public"
   },
-  "dependencies": {},
   "devDependencies": {
-    "@soybeanjs/eslint-config": "^0.2.10",
-    "@types/node": "^18.7.4",
+    "@types/node": "18.8.0",
     "bumpp": "^8.2.1",
-    "eslint": "^8.22.0",
-    "typescript": "^4.7.4"
+    "eslint": "^8.25.0",
+    "eslint-config-soybeanjs": "^0.1.0",
+    "typescript": "^4.8.4"
   }
 }
