@@ -1,5 +1,6 @@
 import { createApp } from 'vue';
 import 'uno.css';
+import './styles/global.css';
 
 import App from './App.vue';
 

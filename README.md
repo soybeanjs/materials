@@ -1,7 +1,7 @@
-## Soybean's components material lib
+## SoybeanJS's component materials, include Vue, React
 
-组件物料
+SoybeanJS 的组件物料
 
-### vue 组件物料
+### Vue 组件物料
 
-### react 组件物料
+### React 组件物料

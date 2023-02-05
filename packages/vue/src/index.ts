@@ -1,4 +1,6 @@
 import 'uno.css';
 
-export * from './admin-tab';
-export * from './admin-layout';
+export * from './components/admin-layout';
+export * from './components/admin-layout/type';
+
+export * from './components/admin-tab';

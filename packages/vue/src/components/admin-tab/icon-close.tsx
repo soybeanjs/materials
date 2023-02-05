@@ -1,5 +1,4 @@
-import { defineComponent, Transition } from 'vue-demi';
-import { useBoolean } from '../../hooks';
+import { defineComponent, ref, Transition } from 'vue-demi';
 import { initComponentProps } from '../../shared';
 
 const SvgClose = defineComponent({
@@ -58,14 +57,21 @@ interface Props {
 const IconClose = defineComponent<Props>({
   name: 'IconClose',
   setup(props) {
-    const { bool: isHover, setTrue, setFalse } = useBoolean();
+    const isHover = ref(false);
+
+    function setHover() {
+      isHover.value = true;
+    }
+    function setNotHover() {
+      isHover.value = false;
+    }
 
     return () => (
       <div
         class="relative inline-flex justify-center items-center w-18px h-18px text-16px"
         style={{ color: props.isActive ? props.activeColor : props.defaultColor }}
-        onMouseenter={setTrue}
-        onMouseleave={setFalse}
+        onMouseenter={setHover}
+        onMouseleave={setNotHover}
       >
         <Transition>{isHover.value ? <SvgCloseCircle class="absolute" /> : <SvgClose class="absolute" />}</Transition>
       </div>
