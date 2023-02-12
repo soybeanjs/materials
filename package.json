@@ -2,7 +2,7 @@
   "name": "@soybeanjs/materials",
   "version": "0.0.1",
   "private": true,
-  "description": "SoybeanJS's component materials, include Vue, React",
+  "description": "SoybeanJS's component materials, include Vue, React，Solid and Svelte",
   "author": {
     "name": "SoybeanJS",
     "email": "honghuangdc@gmail.com",

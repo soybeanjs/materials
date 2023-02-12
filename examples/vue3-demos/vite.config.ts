@@ -11,5 +11,9 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
-  plugins: [vue(), vueJsx(), VueMacros(), unocss()]
+  plugins: [vue(), vueJsx(), VueMacros(), unocss()],
+  server: {
+    host: '0.0.0.0',
+    port: 3900
+  }
 });

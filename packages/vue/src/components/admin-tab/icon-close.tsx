@@ -1,5 +1,5 @@
 import { defineComponent, ref, Transition } from 'vue-demi';
-import { initComponentProps } from '../../shared';
+import { initProps } from '../../shared';
 
 const SvgClose = defineComponent({
   name: 'SvgClose',
@@ -56,6 +56,19 @@ interface Props {
 
 const IconClose = defineComponent<Props>({
   name: 'IconClose',
+  props: initProps<Props>({
+    isActive: {
+      type: Boolean
+    },
+    defaultColor: {
+      type: String,
+      default: '#9ca3af'
+    },
+    activeColor: {
+      type: String,
+      default: '#1890ff'
+    }
+  }),
   setup(props) {
     const isHover = ref(false);
 
@@ -76,20 +89,6 @@ const IconClose = defineComponent<Props>({
         <Transition>{isHover.value ? <SvgCloseCircle class="absolute" /> : <SvgClose class="absolute" />}</Transition>
       </div>
     );
-  }
-});
-
-initComponentProps<Props>(IconClose, {
-  isActive: {
-    type: Boolean
-  },
-  defaultColor: {
-    type: String,
-    default: '#9ca3af'
-  },
-  activeColor: {
-    type: String,
-    default: '#1890ff'
   }
 });
 

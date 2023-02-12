@@ -80,6 +80,11 @@ export interface ContentConfig {
    * @default ''
    */
   contentClass?: string;
+  /**
+   * 主体内容是否全屏铺满
+   * @description 铺满时，其他元素通过display: none进行隐藏
+   */
+  fullContent?: boolean;
 }
 
 /**
@@ -115,10 +120,10 @@ export interface FooterConfig {
 
 /**
  * 布局模式
- * - vertical 垂直
  * - horizontal 水平
+ * - vertical 垂直
  */
-export type LayoutMode = 'vertical' | 'horizontal';
+export type LayoutMode = 'horizontal' | 'vertical';
 
 /**
  * 内容溢出时的出现滚动条的方式
@@ -143,6 +148,16 @@ export interface LayoutProps extends HeaderConfig, TabConfig, SiderConfig, Conte
    */
   scrollMode?: ScrollMode;
   /**
+   * 滚动元素的ID
+   * @description 可用于获取对应的Dom，使其滚动
+   * @default 默认: const adminLayoutScrollElId = '__ADMIN_LAYOUT_SCROLL_EL_ID__'
+   * @example 使用导出的默认ID
+   * ```ts
+   * import { adminLayoutScrollElId } from '@soybeanjs/vue-materials';
+   * ```
+   */
+  scrollElId?: string;
+  /**
    * 通用的样式名称
    * - 可以用来配置过渡动画的样式
    * @default 'transition-all-300'
@@ -160,7 +175,9 @@ export interface CommonProps {
   /** 是否可见 */
   visible?: boolean;
   /** 样式的类名 */
-  class?: string | (string | undefined)[];
+  class?: string | (string | Record<string, boolean> | undefined)[];
+  /** 是否隐藏(display: none) */
+  hide?: boolean;
 }
 
 /**
@@ -169,10 +186,6 @@ export interface CommonProps {
 export interface HeaderProps extends CommonProps {
   /** 是否固定 */
   fixed?: boolean;
-  /** 高度 */
-  height?: number;
-  /** 左边距 */
-  paddingLeft?: number;
 }
 
 /**
@@ -181,30 +194,22 @@ export interface HeaderProps extends CommonProps {
 export interface TabProps extends CommonProps {
   /** 是否固定 */
   fixed?: boolean;
-  /** 固定时距离顶部的距离(等于头部组件的高度) */
-  top?: number;
-  /** 高度 */
-  height?: number;
-  /** 左边距 */
-  paddingLeft?: number;
-}
-
-/** 主体内容组件的属性 */
-export interface ContentProps {
-  /** 内容溢出是否滚动 */
-  overScroll?: boolean;
-  /** 样式的类名 */
-  class?: CommonProps['class'];
 }
 
 /** 侧边栏组件属性 */
 export interface SiderProps extends CommonProps {
-  /** 宽度 */
-  width?: number;
-  /** 顶部方向的内边距 */
-  paddingTop?: number;
-  /** 底部方向的内边距 */
-  paddingBottom?: number;
+  /** 是否折叠 */
+  collapse?: boolean;
+}
+
+/** 主体内容组件的属性 */
+export interface ContentProps {
+  /** 滚动元素的id */
+  scrollId?: string;
+  /** 内容溢出是否滚动 */
+  overScroll?: boolean;
+  /** 样式的类名 */
+  class?: CommonProps['class'];
 }
 
 /**
@@ -213,8 +218,4 @@ export interface SiderProps extends CommonProps {
 export interface FooterProps extends CommonProps {
   /** 是否固定 */
   fixed?: boolean;
-  /** 高度 */
-  height?: number;
-  /** 左边距 */
-  paddingLeft?: number;
 }

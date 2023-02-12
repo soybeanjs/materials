@@ -1,6 +1,6 @@
 import { defineComponent, computed } from 'vue-demi';
 import type { PropType } from 'vue-demi';
-import { initComponentProps } from '../../shared';
+import { initProps } from '../../shared';
 import IconClose from './icon-close';
 
 const ButtonTab = defineComponent({
@@ -56,6 +56,14 @@ export type AdminTabMode = NonNullable<AdminTabProps['mode']>;
 
 const AdminTab = defineComponent<AdminTabProps>({
   name: 'AdminTab',
+  props: initProps<AdminTabProps>({
+    darkMode: {
+      type: Boolean
+    },
+    mode: {
+      type: String as PropType<'button' | 'chrome'>
+    }
+  }),
   setup(props) {
     const components: Record<AdminTabMode, typeof ButtonTab | typeof ChromeTab> = {
       button: ButtonTab,
@@ -65,15 +73,6 @@ const AdminTab = defineComponent<AdminTabProps>({
     const Tab = computed(() => components[props.mode || 'chrome']);
 
     return () => <Tab.value />;
-  }
-});
-
-initComponentProps(AdminTab, {
-  darkMode: {
-    type: Boolean
-  },
-  mode: {
-    type: String as PropType<'button' | 'chrome'>
   }
 });
 

@@ -16,7 +16,7 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "types": ["vite/client"]
+    "types": ["vite/client", "unplugin-vue-macros/macros-global"]
   },
   "exclude": ["dist", "node_modules"]
 }

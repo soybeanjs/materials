@@ -7,12 +7,15 @@ import dts from 'vite-plugin-dts';
 import unocss from '@unocss/vite';
 
 export default defineConfig({
-  // resolve: {
-  //   alias: {
-  //     '@': path.resolve(process.cwd(), 'src/index.ts')
-  //   }
-  // },
-  plugins: [vue(), vueJsx(), vueMacros(), dts({ staticImport: true, rollupTypes: true }), unocss()],
+  plugins: [
+    vue(),
+    vueJsx({
+      transformOn: true
+    }),
+    vueMacros(),
+    dts({ rollupTypes: true }),
+    unocss()
+  ],
   optimizeDeps: {
     exclude: ['vue-demi']
   },
