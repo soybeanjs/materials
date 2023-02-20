@@ -1,6 +1,8 @@
 <template>
-  <AdminTab mode="chrome">ChromeTab</AdminTab>
-  <AdminTab mode="button">ButtonTab</AdminTab>
+  <div class="flex gap-12px">
+    <AdminTab mode="chrome">ChromeTab</AdminTab>
+    <AdminTab mode="button">ButtonTab</AdminTab>
+  </div>
 </template>
 
 <script setup lang="ts">

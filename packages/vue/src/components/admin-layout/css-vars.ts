@@ -1,11 +1,5 @@
+import type { Util } from '../../typings';
 import type { LayoutProps } from './types';
-
-// single kebab
-type Kebab<S extends string> = S extends Uncapitalize<S> ? S : `-${Uncapitalize<S>}`;
-// full kebab
-type KebabCase<S extends string> = S extends `${infer Start}${infer End}`
-  ? `${Uncapitalize<Start>}${KebabCase<Kebab<End>>}`
-  : S;
 
 type Prefix = '--soy-';
 
@@ -20,7 +14,7 @@ export type CssVarsProps = Pick<
 };
 
 type CssVars = {
-  [K in keyof CssVarsProps as `${Prefix}${KebabCase<K>}`]: string | number;
+  [K in keyof CssVarsProps as `${Prefix}${Util.KebabCase<K>}`]: string | number;
 };
 
 export function createCssVars(props: CssVarsProps) {
