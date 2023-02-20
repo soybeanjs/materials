@@ -26,15 +26,18 @@ export interface TabProps {
   chromeClass?: string;
   /** 是否是激活状态 */
   active?: boolean;
+  /** 激活时的颜色 */
+  activeColor?: string;
   /** 是否显示关闭图标 */
   closable?: boolean;
 }
 
 interface CommonProps {
+  style: Record<string, string | number>;
   /** 样式的类名 */
   class?: string | (string | Record<string, boolean> | undefined)[];
 }
 
-export interface ButtonTabProps extends CommonProps {}
+export interface ButtonTabProps extends CommonProps, TabProps {}
 
-export interface ChromeTabProps extends CommonProps {}
+export interface ChromeTabProps extends CommonProps, TabProps {}

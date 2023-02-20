@@ -1,7 +1,12 @@
 <template>
-  <div class="flex gap-12px">
-    <AdminTab mode="chrome">ChromeTab</AdminTab>
+  <div class="flex gap-12px p-12px">
     <AdminTab mode="button">ButtonTab</AdminTab>
+    <AdminTab mode="button" :active="true">ButtonTab</AdminTab>
+  </div>
+
+  <div class="flex gap-12px p-12px bg-#18181c text-white">
+    <AdminTab mode="button" :dark-mode="true">ButtonTab</AdminTab>
+    <AdminTab mode="button" :active="true" :dark-mode="true">ButtonTab</AdminTab>
   </div>
 </template>
 

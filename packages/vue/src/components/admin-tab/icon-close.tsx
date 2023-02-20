@@ -1,5 +1,4 @@
 import type { FunctionalComponent } from 'vue-demi';
-import { defineComponent } from 'vue-demi';
 
 const SvgClose: FunctionalComponent = () => {
   return (
@@ -12,15 +11,12 @@ const SvgClose: FunctionalComponent = () => {
   );
 };
 
-const IconClose = defineComponent({
-  name: 'IconClose',
-  setup() {
-    return () => (
-      <div class="relative inline-flex justify-center items-center text-16px">
-        <SvgClose />
-      </div>
-    );
-  }
-});
+const IconClose: FunctionalComponent = () => {
+  return (
+    <div class=":soy: relative inline-flex justify-center items-center text-16px">
+      <SvgClose />
+    </div>
+  );
+};
 
 export default IconClose;

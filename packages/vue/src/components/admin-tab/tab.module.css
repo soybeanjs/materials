@@ -1,0 +1,19 @@
+/* @type */
+
+.layout-button-tab {
+  border-color: #e5e7eb;
+}
+
+.layout-button-tab_dark {
+  border-color: #ffffff3d;
+}
+
+.layout-button-tab_active {
+  color: var(--soy-primary-color);
+  border-color: var(--soy-primary-color-opacity3);
+  background-color: var(--soy-primary-color-opacity1);
+}
+
+.layout-button-tab_active_dark {
+  background-color: var(--soy-primary-color-opacity2);
+}

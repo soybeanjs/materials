@@ -1,4 +1,8 @@
 import type { App, Component, ComponentObjectPropsOptions } from 'vue-demi';
+import { colord, extend } from 'colord';
+import mixPlugin from 'colord/plugins/mix';
+
+extend([mixPlugin]);
 
 /** 注册组件 */
 export function install<T extends Component>(app: App, component: T) {
@@ -30,4 +34,23 @@ export function getStrategyResult<T>(conditions: [boolean, T][]): T | null {
   });
 
   return data;
+}
+
+/**
+ * 给颜色加透明度
+ * @param color - 颜色
+ * @param alpha - 透明度(0 - 1)
+ */
+export function addColorAlpha(color: string, alpha: number) {
+  return colord(color).alpha(alpha).toHex();
+}
+
+/**
+ * 颜色混合
+ * @param firstColor - 第一个颜色
+ * @param secondColor - 第二个颜色
+ * @param ratio - 第二个颜色占比
+ */
+export function mixColor(firstColor: string, secondColor: string, ratio: number) {
+  return colord(firstColor).mix(secondColor, ratio).toHex();
 }
