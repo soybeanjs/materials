@@ -41,3 +41,8 @@ interface CommonProps {
 export interface ButtonTabProps extends CommonProps, TabProps {}
 
 export interface ChromeTabProps extends CommonProps, TabProps {}
+
+export interface IconCloseProps {
+  /** 暗黑模式 */
+  darkMode?: boolean;
+}

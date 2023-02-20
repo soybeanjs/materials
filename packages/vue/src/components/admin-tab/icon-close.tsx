@@ -1,4 +1,6 @@
 import type { FunctionalComponent } from 'vue-demi';
+import type { IconCloseProps } from './types';
+import style from './tab.module.css';
 
 const SvgClose: FunctionalComponent = () => {
   return (
@@ -11,9 +13,15 @@ const SvgClose: FunctionalComponent = () => {
   );
 };
 
-const IconClose: FunctionalComponent = () => {
+const IconClose: FunctionalComponent<IconCloseProps> = props => {
   return (
-    <div class=":soy: relative inline-flex justify-center items-center text-16px">
+    <div
+      class={[
+        ':soy: relative inline-flex justify-center items-center w-16px h-16px text-14px rd-50%',
+        style['layout-button-tab__icon-close'],
+        { [style['layout-button-tab__icon-close_dark']]: props.darkMode }
+      ]}
+    >
       <SvgClose />
     </div>
   );

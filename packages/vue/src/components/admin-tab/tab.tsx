@@ -67,7 +67,7 @@ const AdminTab = defineComponent<TabProps>({
         {{
           default: () => slots.default?.(),
           prefix: () => slots.prefix?.(),
-          suffix: () => slots.suffix?.() || <IconClose />
+          suffix: () => slots.suffix?.() || <IconClose darkMode={props.darkMode} />
         }}
       </Tab.value>
     );
