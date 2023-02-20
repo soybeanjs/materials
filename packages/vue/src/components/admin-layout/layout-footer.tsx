@@ -1,5 +1,5 @@
 import type { FunctionalComponent } from 'vue-demi';
-import type { FooterProps } from './type';
+import type { FooterProps } from './types';
 import style from './layout.module.css';
 
 /** 底部组件 */

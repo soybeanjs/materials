@@ -1,5 +1,5 @@
 import type { FunctionalComponent } from 'vue-demi';
-import type { SiderProps } from './type';
+import type { SiderProps } from './types';
 import style from './layout.module.css';
 
 /** 侧边栏组件 */

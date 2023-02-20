@@ -1,5 +1,5 @@
 import type { FunctionalComponent } from 'vue-demi';
-import type { TabProps } from './type';
+import type { TabProps } from './types';
 import style from './layout.module.css';
 
 /** Tab页签组件 */

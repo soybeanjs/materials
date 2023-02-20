@@ -40,14 +40,14 @@ import '@soybeanjs/vue-materials/dist/style.css'
 
 #### 属性
 
-| 字段                      | 说明                                                                     | 类型                      | 默认值                          |
-| ------------------------- | ------------------------------------------------------------------------ | ------------------------- | ------------------------------- |
-| mode                      | 布局模式                                                                 | [LayoutMode](#LayoutMode) | "vertical"                      |
-| scrollMode                | 滚动模式                                                                 | [ScrollMode](#ScrollMode) | "vertical"                      |
-| [scrollElId](#scrollElId) | 滚动元素的 ID, 可用于获取对应的 Dom，使其滚动                            | string                    | "**ADMIN_LAYOUT_SCROLL_EL_ID**" |
-| commonClass               | 组件的通用样式类名，可控制容器、头部、页签、侧边栏、主体和底部的公共样式 | string                    | "transition-all-300"            |
-| fixedTop                  | 固定上面的头部和 Tab 页签部分                                            | boolean                   | true                            |
-|                           |                                                                          |                           |                                 |
+| 字段                      | 说明                                                                     | 类型                      | 默认值               |
+| ------------------------- | ------------------------------------------------------------------------ | ------------------------- | -------------------- |
+| mode                      | 布局模式                                                                 | [LayoutMode](#LayoutMode) | "vertical"           |
+| scrollMode                | 滚动模式                                                                 | [ScrollMode](#ScrollMode) | "vertical"           |
+| [scrollElId](#scrollElId) | 滚动元素的 ID, 可用于获取对应的 Dom，使其滚动                            | string                    | "**SCROLL_EL_ID**"   |
+| commonClass               | 组件的通用样式类名，可控制容器、头部、页签、侧边栏、主体和底部的公共样式 | string                    | "transition-all-300" |
+| fixedTop                  | 固定上面的头部和 Tab 页签部分                                            | boolean                   | true                 |
+|                           |                                                                          |                           |                      |
 
 ### 说明
 
@@ -79,5 +79,5 @@ type ScrollMode = 'wrapper' | 'content';
 使用导出的默认 ID
 
 ```ts
-import { adminLayoutScrollElId } from '@soybeanjs/vue-materials';
+import { SCROLL_EL_ID } from '@soybeanjs/vue-materials';
 ```

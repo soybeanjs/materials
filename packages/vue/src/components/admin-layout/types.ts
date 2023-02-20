@@ -168,10 +168,12 @@ export interface LayoutProps extends HeaderConfig, TabConfig, SiderConfig, Conte
    * @default true
    */
   fixedTop?: boolean;
+  /** Header,Tab,Sider和Footer的zIndex取值不超过该值 */
+  maxZIndex?: number;
 }
 
 /** 布局组件各部分的通用属性 */
-export interface CommonProps {
+interface CommonProps {
   /** 是否可见 */
   visible?: boolean;
   /** 样式的类名 */

@@ -1,5 +1,5 @@
 import type { FunctionalComponent } from 'vue-demi';
-import type { HeaderProps } from './type';
+import type { HeaderProps } from './types';
 import style from './layout.module.css';
 
 /** 头部组件 */

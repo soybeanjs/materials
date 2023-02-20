@@ -1,5 +1,5 @@
 import type { FunctionalComponent } from 'vue-demi';
-import type { ContentProps } from './type';
+import type { ContentProps } from './types';
 
 /** 主体内容组件 */
 const LayoutContent: FunctionalComponent<ContentProps> = (props: ContentProps, { slots }) => {

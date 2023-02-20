@@ -1,17 +1,20 @@
 import { defineComponent, computed } from 'vue-demi';
 import type { PropType } from 'vue-demi';
 import { initProps, getStrategyResult } from '../../shared';
-import { createCssVars } from './css-vars';
+import { createCssVars, type CssVarsProps } from './css-vars';
 import LayoutHeader from './layout-header';
 import LayoutTab from './layout-tab';
 import LayoutSider from './layout-sider';
 import LayoutContent from './layout-content';
 import LayoutFooter from './layout-footer';
 import style from './layout.module.css';
-import type { LayoutProps, LayoutMode, ScrollMode } from './type';
+import type { LayoutProps, LayoutMode, ScrollMode } from './types';
 
 /** 布局组件的滚动元素id默认值 */
 const SCROLL_EL_ID = '__SCROLL_EL_ID__';
+
+/** 最大的zIndex值 */
+const MAX_Z_INDEX = 100;
 
 /** 管理系统的布局组件 */
 const AdminLayout = defineComponent<LayoutProps>({
@@ -36,6 +39,10 @@ const AdminLayout = defineComponent<LayoutProps>({
     fixedTop: {
       type: Boolean,
       default: true
+    },
+    maxZIndex: {
+      type: Number,
+      default: MAX_Z_INDEX
     },
     headerVisible: {
       type: Boolean,
@@ -112,14 +119,31 @@ const AdminLayout = defineComponent<LayoutProps>({
   }),
   setup(props, { slots }) {
     const cssVars = computed(() => {
-      const { headerHeight, tabHeight, siderWidth, siderCollapsedWidth, footerHeight } = props;
-
-      const cssProps = {
+      const {
+        mode,
+        maxZIndex = MAX_Z_INDEX,
         headerHeight,
         tabHeight,
         siderWidth,
         siderCollapsedWidth,
         footerHeight
+      } = props;
+
+      const headerZIndex = maxZIndex - 2;
+      const tabZIndex = maxZIndex - 4;
+      const siderZIndex = mode === 'vertical' ? maxZIndex - 1 : maxZIndex - 3;
+      const footerZIndex = maxZIndex - 4;
+
+      const cssProps: CssVarsProps = {
+        headerHeight,
+        headerZIndex,
+        tabHeight,
+        tabZIndex,
+        siderWidth,
+        siderZIndex,
+        siderCollapsedWidth,
+        footerHeight,
+        footerZIndex
       };
 
       return createCssVars(cssProps);
