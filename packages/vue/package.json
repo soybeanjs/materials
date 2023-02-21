@@ -8,6 +8,9 @@
   "files": [
     "index.js"
   ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "build": "vite build",
     "test": "npm run test3",
