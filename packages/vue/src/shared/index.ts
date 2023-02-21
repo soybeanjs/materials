@@ -10,9 +10,9 @@ export function install<T extends Component>(app: App, component: T) {
 }
 
 /**
- * 初始化属性
+ * 初始化组件属性
  * @param props
- * @description 返回值为any是为了解决defineComponent不能传递范型参数问题
+ * @description 返回值为any是为了解决defineComponent传递范型参数有类型的问题
  */
 export function initProps<Props>(props: ComponentObjectPropsOptions<Props>): any {
   return props;

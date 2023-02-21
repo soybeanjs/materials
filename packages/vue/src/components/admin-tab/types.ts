@@ -33,7 +33,7 @@ export interface TabProps {
 }
 
 interface CommonProps {
-  style: Record<string, string | number>;
+  style?: Record<string, string | number>;
   /** 样式的类名 */
   class?: string | (string | Record<string, boolean> | undefined)[];
 }
@@ -42,7 +42,4 @@ export interface ButtonTabProps extends CommonProps, TabProps {}
 
 export interface ChromeTabProps extends CommonProps, TabProps {}
 
-export interface IconCloseProps {
-  /** 暗黑模式 */
-  darkMode?: boolean;
-}
+export interface IconCloseProps extends Pick<CommonProps, 'class'> {}

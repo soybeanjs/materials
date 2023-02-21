@@ -1,9 +1,15 @@
 declare const styles: {
-  readonly 'layout-button-tab': string;
-  readonly 'layout-button-tab_dark': string;
-  readonly 'layout-button-tab_active': string;
-  readonly 'layout-button-tab_active_dark': string;
-  readonly 'layout-button-tab__icon-close': string;
-  readonly 'layout-button-tab__icon-close_dark': string;
+  readonly 'button-tab': string;
+  readonly 'button-tab_dark': string;
+  readonly 'button-tab_active': string;
+  readonly 'button-tab_active_dark': string;
+  readonly 'button-tab__icon-close': string;
+  readonly 'button-tab__icon-close_dark': string;
+  readonly 'chrome-tab': string;
+  readonly 'chrome-tab_active': string;
+  readonly 'chrome-tab__bg': string;
+  readonly 'chrome-tab__bg_active': string;
+  readonly 'chrome-tab__bg_active_dark': string;
+  readonly 'chrome-tab__icon-close': string;
 };
 export = styles;

@@ -6,6 +6,7 @@ import ButtonTab from './button-tab';
 import ChromeTab from './chrome-tab';
 import IconClose from './icon-close';
 import type { TabProps } from './types';
+import style from './tab.module.css';
 
 const ACTIVE_COLOR = '#1890ff';
 
@@ -42,7 +43,7 @@ const AdminTab = defineComponent<TabProps>({
     },
     closable: {
       type: Boolean,
-      default: false
+      default: true
     }
   }),
   setup(props, { slots }) {
@@ -67,7 +68,17 @@ const AdminTab = defineComponent<TabProps>({
         {{
           default: () => slots.default?.(),
           prefix: () => slots.prefix?.(),
-          suffix: () => slots.suffix?.() || <IconClose darkMode={props.darkMode} />
+          suffix: () =>
+            slots.suffix?.() ||
+            (props.closable && (
+              <IconClose
+                class={[
+                  { [style['button-tab__icon-close']]: props.mode === 'button' },
+                  { [style['button-tab__icon-close_dark']]: props.mode === 'button' && Boolean(props.darkMode) },
+                  { [style['chrome-tab__icon-close']]: props.mode === 'chrome' }
+                ]}
+              />
+            ))
         }}
       </Tab.value>
     );

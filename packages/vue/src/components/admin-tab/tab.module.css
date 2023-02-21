@@ -1,35 +1,69 @@
 /* @type */
 
-.layout-button-tab {
+.button-tab {
   border-color: #e5e7eb;
 }
 
-.layout-button-tab_dark {
+.button-tab_dark {
   border-color: #ffffff3d;
 }
 
-.layout-button-tab:hover {
+.button-tab:hover {
   color: var(--soy-primary-color);
   border-color: var(--soy-primary-color-opacity3);
 }
 
-
-.layout-button-tab_active {
+.button-tab_active {
   color: var(--soy-primary-color);
   border-color: var(--soy-primary-color-opacity3);
   background-color: var(--soy-primary-color-opacity1);
 }
 
-.layout-button-tab_active_dark {
+.button-tab_active_dark {
   background-color: var(--soy-primary-color-opacity2);
 }
 
-.layout-button-tab__icon-close:hover {
+.button-tab__icon-close:hover {
   font-size: 12px;
   color: #ffffff;
   background-color: var(--soy-primary-color);
 }
 
-.layout-button-tab__icon-close_dark:hover {
+.button-tab__icon-close_dark:hover {
   color: #000000;
+}
+
+
+.chrome-tab:hover {
+  z-index: 9;
+}
+
+.chrome-tab_active {
+  z-index: 10;
+}
+
+.chrome-tab__bg {
+  color: transparent;
+}
+
+.chrome-tab:hover .chrome-tab__bg {
+  color: #dee1e6;
+}
+
+.chrome-tab__bg_active {
+  color: var(--soy-primary-color-opacity1);
+}
+
+.chrome-tab:hover .chrome-tab__bg_active {
+  color: var(--soy-primary-color-opacity1);
+}
+
+.chrome-tab__bg_active_dark {
+  color: var(--soy-primary-color-opacity2);
+}
+
+.chrome-tab__icon-close:hover {
+  font-size: 12px;
+  color: #ffffff;
+  background-color: #9ca3af;
 }
