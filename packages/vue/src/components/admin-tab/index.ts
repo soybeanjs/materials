@@ -5,4 +5,4 @@ AdminTab.install = install;
 
 export { AdminTab };
 
-export type { TabProps } from './types';
+export type { TabProps, TabMode } from './types';

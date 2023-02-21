@@ -13,7 +13,7 @@ export interface TabProps {
    * Tab模式
    * - {@link TabMode}
    */
-  mode?: 'button' | 'chrome';
+  mode?: TabMode;
   /**
    * 通用的样式名称
    * - 可以用来配置过渡动画的样式
