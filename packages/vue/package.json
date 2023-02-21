@@ -4,10 +4,9 @@
   "description": "vue2 and vue3 components material",
   "author": "Soybean <honghuangdc@gmail.com> (https://github.com/honghuangdc)",
   "license": "MIT",
-  "main": "src/index.ts",
-  "files": [
-    "index.js"
-  ],
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
