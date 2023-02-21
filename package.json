@@ -1,6 +1,6 @@
 {
   "name": "@soybeanjs/materials",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": true,
   "description": "SoybeanJS's component materials, include Vue, React，Solid and Svelte",
   "author": {
