@@ -13,7 +13,14 @@ export default defineConfig({
       transformOn: true
     }),
     vueMacros(),
-    dts({ rollupTypes: true }),
+    dts({
+      rollupTypes: true,
+      exclude: [
+        'node_modules',
+        'src/components/admin-layout/layout.module.css.d.ts',
+        'src/components/admin-tab/tab.module.css.d.ts'
+      ]
+    }),
     unocss()
   ],
   optimizeDeps: {

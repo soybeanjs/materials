@@ -1,4 +1,4 @@
-import type { Util } from '../../typings';
+import type { KebabCase } from '../../types';
 
 type Prefix = '--soy-';
 
@@ -12,7 +12,7 @@ export type CssVarsProps = {
 };
 
 type CssVars = {
-  [K in keyof CssVarsProps as `${Prefix}${Util.KebabCase<K>}`]: string | number;
+  [K in keyof CssVarsProps as `${Prefix}${KebabCase<K>}`]: string | number;
 };
 
 export function createCssVars(props: CssVarsProps) {
