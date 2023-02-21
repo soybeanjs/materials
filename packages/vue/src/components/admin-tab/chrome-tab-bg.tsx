@@ -14,11 +14,11 @@ const ChromeTabBg: FunctionalComponent = () => {
           <rect width="100%" height="100%" x="0"></rect>
         </clipPath>
       </defs>
-      <svg width="50%" height="100%">
+      <svg width="51%" height="100%">
         <use xlinkHref="#geometry-left" width="214" height="36" fill="currentColor"></use>
       </svg>
       <g transform="scale(-1, 1)">
-        <svg width="50%" height="100%" x="-100%" y="0">
+        <svg width="51%" height="100%" x="-100%" y="0">
           <use xlinkHref="#geometry-right" width="214" height="36" fill="currentColor"></use>
         </svg>
       </g>

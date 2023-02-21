@@ -1,6 +1,6 @@
 import { defineComponent, computed } from 'vue-demi';
 import type { PropType } from 'vue-demi';
-import { initProps, addColorAlpha, mixColor } from '../../shared';
+import { initProps, addColorAlpha, transformColorWithOpacity } from '../../shared';
 import { createCssVars, type CssVarsProps } from './css-vars';
 import ButtonTab from './button-tab';
 import ChromeTab from './chrome-tab';
@@ -52,8 +52,8 @@ const AdminTab = defineComponent<TabProps>({
 
       const cssProps: CssVarsProps = {
         primaryColor: activeColor,
-        primaryColor1: mixColor('#ffffff', activeColor, 0.2),
-        primaryColor2: mixColor('#000000', activeColor, 0.3),
+        primaryColor1: transformColorWithOpacity(activeColor, 0.1, '#ffffff'),
+        primaryColor2: transformColorWithOpacity(activeColor, 0.3, '#000000'),
         primaryColorOpacity1: addColorAlpha(activeColor, 0.1),
         primaryColorOpacity2: addColorAlpha(activeColor, 0.15),
         primaryColorOpacity3: addColorAlpha(activeColor, 0.3)

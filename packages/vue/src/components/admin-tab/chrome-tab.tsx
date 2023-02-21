@@ -10,18 +10,13 @@ const ChromeTab: FunctionalComponent<ChromeTabProps> = (props, { slots }) => {
         ':soy: relative inline-flex justify-center items-center gap-16px -mr-18px px-24px py-6px cursor-pointer whitespace-nowrap',
         props.class,
         style['chrome-tab'],
-        { [style['chrome-tab_active']]: props.active }
+        { [style['chrome-tab_dark']]: props.darkMode },
+        { [style['chrome-tab_active']]: props.active },
+        { [style['chrome-tab_active_dark']]: props.active && props.darkMode }
       ]}
       style={props.style}
     >
-      <div
-        class={[
-          'absolute left-0 top-0 -z-1 w-full h-full pointer-events-none',
-          style['chrome-tab__bg'],
-          { [style['chrome-tab__bg_active']]: props.active },
-          { [style['chrome-tab__bg_active_dark']]: props.active && props.darkMode }
-        ]}
-      >
+      <div class={['absolute left-0 top-0 -z-1 w-full h-full pointer-events-none', style['chrome-tab__bg']]}>
         <ChromeTabBg />
       </div>
       {slots.prefix?.()}

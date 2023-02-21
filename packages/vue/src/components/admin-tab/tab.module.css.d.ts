@@ -8,8 +8,8 @@ declare const styles: {
   readonly 'chrome-tab': string;
   readonly 'chrome-tab_active': string;
   readonly 'chrome-tab__bg': string;
-  readonly 'chrome-tab__bg_active': string;
-  readonly 'chrome-tab__bg_active_dark': string;
+  readonly 'chrome-tab_active_dark': string;
+  readonly 'chrome-tab_dark': string;
   readonly 'chrome-tab__icon-close': string;
 };
 export = styles;
