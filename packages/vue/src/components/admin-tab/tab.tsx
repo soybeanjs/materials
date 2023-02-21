@@ -44,6 +44,10 @@ const AdminTab = defineComponent<TabProps>({
     closable: {
       type: Boolean,
       default: true
+    },
+    onClose: {
+      type: Function as PropType<() => void>,
+      default: () => {}
     }
   }),
   setup(props, { slots }) {
@@ -71,16 +75,7 @@ const AdminTab = defineComponent<TabProps>({
           default: () => slots.default?.(),
           prefix: () => slots.prefix?.(),
           suffix: () =>
-            slots.suffix?.() ||
-            (props.closable && (
-              <IconClose
-                class={[
-                  { [style['button-tab__icon-close']]: props.mode === 'button' },
-                  { [style['button-tab__icon-close_dark']]: props.mode === 'button' && Boolean(props.darkMode) },
-                  { [style['chrome-tab__icon-close']]: props.mode === 'chrome' }
-                ]}
-              />
-            ))
+            slots.suffix?.() || (props.closable && <IconClose class={style['icon-close']} onClose={props.onClose} />)
         }}
       </Tab.value>
     );

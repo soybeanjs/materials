@@ -23,13 +23,13 @@
   background-color: var(--soy-primary-color-opacity2);
 }
 
-.button-tab__icon-close:hover {
+.button-tab .icon-close:hover {
   font-size: 12px;
   color: #ffffff;
   background-color: var(--soy-primary-color);
 }
 
-.button-tab__icon-close_dark:hover {
+.button-tab_dark .icon-close:hover {
   color: #000000;
 }
 
@@ -70,12 +70,16 @@
   color: var(--soy-primary-color2);
 }
 
-.chrome-tab__icon-close:hover {
+.chrome-tab .icon-close:hover {
   font-size: 12px;
   color: #ffffff;
   background-color: #9ca3af;
 }
 
-.chrome-tab_active .chrome-tab__icon-close:hover {
+.chrome-tab_active .icon-close:hover {
   background-color: var(--soy-primary-color);
+}
+
+.chrome-tab_dark .icon-close:hover {
+  color: #000000;
 }

@@ -16,7 +16,7 @@ const ChromeTab: FunctionalComponent<ChromeTabProps> = (props, { slots }) => {
       ]}
       style={props.style}
     >
-      <div class={['absolute left-0 top-0 -z-1 w-full h-full pointer-events-none', style['chrome-tab__bg']]}>
+      <div class={[':soy: absolute left-0 top-0 -z-1 w-full h-full pointer-events-none', style['chrome-tab__bg']]}>
         <ChromeTabBg />
       </div>
       {slots.prefix?.()}

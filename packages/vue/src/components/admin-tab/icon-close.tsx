@@ -14,7 +14,10 @@ const SvgClose: FunctionalComponent = () => {
 
 const IconClose: FunctionalComponent<IconCloseProps> = props => {
   return (
-    <div class={[':soy: relative inline-flex justify-center items-center w-16px h-16px text-14px rd-50%', props.class]}>
+    <div
+      class={[':soy: relative inline-flex justify-center items-center w-16px h-16px text-14px rd-50%', props.class]}
+      onClick={props.onClose}
+    >
       <SvgClose />
     </div>
   );
