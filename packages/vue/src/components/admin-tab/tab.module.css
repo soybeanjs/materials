@@ -51,15 +51,15 @@
 }
 
 .chrome-tab__bg_active {
-  color: var(--soy-primary-color-opacity1);
+  color: var(--soy-primary-color1);
 }
 
 .chrome-tab:hover .chrome-tab__bg_active {
-  color: var(--soy-primary-color-opacity1);
+  color: var(--soy-primary-color1);
 }
 
 .chrome-tab__bg_active_dark {
-  color: var(--soy-primary-color-opacity2);
+  color: var(--soy-primary-color2);
 }
 
 .chrome-tab__icon-close:hover {
