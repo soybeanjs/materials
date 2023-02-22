@@ -9,5 +9,6 @@ declare const styles: {
   readonly 'chrome-tab__bg': string;
   readonly 'chrome-tab_active_dark': string;
   readonly 'chrome-tab_dark': string;
+  readonly 'chrome-tab-divider': string;
 };
 export = styles;

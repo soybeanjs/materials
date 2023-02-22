@@ -83,3 +83,15 @@
 .chrome-tab_dark .icon-close:hover {
   color: #000000;
 }
+
+.chrome-tab_active .chrome-tab-divider {
+  opacity: 0;
+}
+
+.chrome-tab:hover .chrome-tab-divider {
+  opacity: 0;
+}
+
+.chrome-tab_dark .chrome-tab-divider{
+  background-color: rgba(255,255,255, 0.9);
+}
