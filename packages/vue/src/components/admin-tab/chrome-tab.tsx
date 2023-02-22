@@ -22,7 +22,7 @@ const ChromeTab: FunctionalComponent<ChromeTabProps> = (props, { slots }) => {
       {slots.prefix?.()}
       <span>{slots.default?.()}</span>
       {slots.suffix?.()}
-      <div class={[':soy: absolute right-8px w-1px h-16px bg-#1f2225', style['chrome-tab-divider']]}></div>
+      <div class={[':soy: absolute right-7px w-1px h-16px bg-#1f2225', style['chrome-tab-divider']]}></div>
     </div>
   );
 };
