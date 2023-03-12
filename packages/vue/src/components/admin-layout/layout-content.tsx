@@ -6,7 +6,7 @@ const LayoutContent: FunctionalComponent<ContentProps> = (props: ContentProps, {
   return (
     <main
       id={props.overScroll ? props.scrollId : undefined}
-      class={[':soy: flex flex-col flex-grow', props.class, { ':soy: overflow-auto': props.overScroll }]}
+      class={[':soy: flex flex-col flex-grow', props.class, { ':soy: overflow-y-auto': props.overScroll }]}
     >
       {slots.default?.()}
     </main>

@@ -1,6 +1,7 @@
 /* @type */
 
-.layout-header, .layout-header-placement {
+.layout-header,
+.layout-header-placement {
   height: var(--soy-header-height);
 }
 
@@ -28,7 +29,8 @@
   z-index: var(--soy-sider-z-index);
 }
 
-.layout-footer, .layout-footer-placement {
+.layout-footer,
+.layout-footer-placement {
   height: var(--soy-footer-height);
 }
 
@@ -37,11 +39,11 @@
 }
 
 .left-gap {
-  padding-left: var(--soy-sider-width); 
+  padding-left: var(--soy-sider-width);
 }
 
 .left-gap_collapsed {
-  padding-left: var(--soy-sider-collapsed-width); 
+  padding-left: var(--soy-sider-collapsed-width);
 }
 
 .sider-padding-top {

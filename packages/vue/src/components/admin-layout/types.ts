@@ -158,6 +158,10 @@ export interface LayoutProps extends HeaderConfig, TabConfig, SiderConfig, Conte
    */
   scrollElId?: string;
   /**
+   * 滚动元素的的样式class
+   */
+  scrollElClass?: string;
+  /**
    * 通用的样式名称
    * - 可以用来配置过渡动画的样式
    * @default 'transition-all-300'

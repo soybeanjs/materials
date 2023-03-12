@@ -32,6 +32,10 @@ const AdminLayout = defineComponent<LayoutProps>({
       type: String,
       default: SCROLL_EL_ID
     },
+    scrollElClass: {
+      type: String,
+      default: ''
+    },
     commonClass: {
       type: String,
       default: 'transition-all-300'
@@ -195,7 +199,12 @@ const AdminLayout = defineComponent<LayoutProps>({
       <div class={[':soy: relative h-full', props.commonClass]} style={{ ...cssVars.value }}>
         <div
           id={isWrapperScroll.value ? props.scrollElId : undefined}
-          class={[':soy: flex flex-col h-full', props.commonClass, { ':soy: overflow-auto': isWrapperScroll.value }]}
+          class={[
+            ':soy: flex flex-col h-full',
+            props.commonClass,
+            props.scrollElClass,
+            { ':soy: overflow-y-auto': isWrapperScroll.value }
+          ]}
         >
           <LayoutHeader
             visible={props.headerVisible}
@@ -225,7 +234,7 @@ const AdminLayout = defineComponent<LayoutProps>({
           <LayoutContent
             scrollId={props.scrollElId}
             overScroll={isContentScroll.value}
-            class={[props.commonClass, props.contentClass, leftGapClass.value]}
+            class={[props.commonClass, props.contentClass, props.scrollElClass, leftGapClass.value]}
           >
             {slots.default?.()}
           </LayoutContent>

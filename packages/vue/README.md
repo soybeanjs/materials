@@ -13,10 +13,9 @@ pnpm install @soybeanjs/vue-materials
 ## 使用
 
 ```vue
-
 <script setup lang="ts">
-import { AdminLayout, AdminTab } from '@soybeanjs/vue-materials';
-import '@soybeanjs/vue-materials/dist/style.css'
+import { AdminLayout, AdminTab } from "@soybeanjs/vue-materials";
+import "@soybeanjs/vue-materials/dist/style.css";
 </script>
 
 <template>
@@ -59,7 +58,7 @@ import '@soybeanjs/vue-materials/dist/style.css'
  * - horizontal 水平
  * - vertical 垂直
  */
-type LayoutMode = 'horizontal' | 'vertical';
+type LayoutMode = "horizontal" | "vertical";
 ```
 
 #### ScrollMode
@@ -71,7 +70,7 @@ type LayoutMode = 'horizontal' | 'vertical';
  * - content 主体内容组件出现滚动条
  * @default 默认 wrapper
  */
-type ScrollMode = 'wrapper' | 'content';
+type ScrollMode = "wrapper" | "content";
 ```
 
 #### scrollElId
@@ -79,5 +78,5 @@ type ScrollMode = 'wrapper' | 'content';
 使用导出的默认 ID
 
 ```ts
-import { SCROLL_EL_ID } from '@soybeanjs/vue-materials';
+import { SCROLL_EL_ID } from "@soybeanjs/vue-materials";
 ```

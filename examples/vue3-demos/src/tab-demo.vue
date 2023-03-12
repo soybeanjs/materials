@@ -22,7 +22,9 @@
   </div>
 
   <div class="mt-12px p-12px" :class="{ '!bg-dark text-white': darkMode }">
-    <AdminTab :mode="mode" :dark-mode="darkMode" @click="handleClickTab" @close="handleClose"> ChromeTab </AdminTab>
+    <AdminTab :mode="mode" :dark-mode="darkMode" :active="true" @click="handleClickTab" @close="handleClose">
+      ChromeTab
+    </AdminTab>
   </div>
 
   <div class="flex gap-12px p-12px">
@@ -39,10 +41,10 @@ import type { TabMode } from '@soybeanjs/vue-materials';
 import { AdminTab } from '@soybeanjs/vue-materials';
 
 function handleClickTab() {
-  console.log('点击了Tab');
+  window.console.log('点击了Tab');
 }
 function handleClose() {
-  console.log('点击关闭');
+  window.console.log('点击关闭');
 }
 
 const mode = ref<TabMode>('chrome');
