@@ -32,7 +32,7 @@ const AdminLayout = defineComponent<LayoutProps>({
       type: String,
       default: SCROLL_EL_ID
     },
-    scrollElClass: {
+    scrollWrapperClass: {
       type: String,
       default: ''
     },
@@ -202,7 +202,7 @@ const AdminLayout = defineComponent<LayoutProps>({
           class={[
             ':soy: flex flex-col h-full',
             props.commonClass,
-            props.scrollElClass,
+            props.scrollWrapperClass,
             { ':soy: overflow-y-auto': isWrapperScroll.value }
           ]}
         >
@@ -234,7 +234,7 @@ const AdminLayout = defineComponent<LayoutProps>({
           <LayoutContent
             scrollId={props.scrollElId}
             overScroll={isContentScroll.value}
-            class={[props.commonClass, props.contentClass, props.scrollElClass, leftGapClass.value]}
+            class={[props.commonClass, props.contentClass, leftGapClass.value]}
           >
             {slots.default?.()}
           </LayoutContent>

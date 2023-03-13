@@ -161,6 +161,8 @@ export interface LayoutProps extends HeaderConfig, TabConfig, SiderConfig, Conte
    * 滚动元素的的样式class
    */
   scrollElClass?: string;
+  /** 外层滚动容器的样式 */
+  scrollWrapperClass?: string;
   /**
    * 通用的样式名称
    * - 可以用来配置过渡动画的样式
