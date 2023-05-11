@@ -1,42 +1,44 @@
 <template>
-  <admin-layout
-    :mode="layoutMode"
-    :scroll-mode="scrollMode"
-    :fixed-top="fixedTop"
-    :header-visible="headerVisible"
-    :tab-visible="tabVisible"
-    :sider-visible="siderVisible"
-    :sider-collapse="siderCollapse"
-    :full-content="full"
-    :footer-visible="footerVisible"
-    :fixed-footer="fixedFooter"
-    :right-footer="rightFooter"
-  >
-    <template v-if="headerVisible" #header>
-      <div class="h-full p-2px">
-        <div class="card">Header</div>
+  <div class="h-800px p-24px">
+    <AdminLayout
+      :mode="layoutMode"
+      :scroll-mode="scrollMode"
+      :fixed-top="fixedTop"
+      :header-visible="headerVisible"
+      :tab-visible="tabVisible"
+      :sider-visible="siderVisible"
+      :sider-collapse="siderCollapse"
+      :full-content="full"
+      :footer-visible="footerVisible"
+      :fixed-footer="fixedFooter"
+      :right-footer="rightFooter"
+    >
+      <template #header>
+        <div class="h-full p-2px bg-red">
+          <div class="card">Header</div>
+        </div>
+      </template>
+      <template #tab>
+        <div class="h-full p-2px bg-green">
+          <div class="card">Tab</div>
+        </div>
+      </template>
+      <template #sider>
+        <div class="h-full p-2px bg-blue">
+          <div class="card">Sider</div>
+        </div>
+      </template>
+      <template #footer>
+        <div class="h-full p-2px bg-purple">
+          <div class="card">Footer</div>
+        </div>
+      </template>
+      <div>
+        <div v-for="i in 50" :key="i" class="bg-#ddd">{{ i }}</div>
       </div>
-    </template>
-    <template #tab>
-      <div class="h-full p-2px">
-        <div class="card">Tab</div>
-      </div>
-    </template>
-    <template #sider>
-      <div class="h-full p-2px">
-        <div class="card">Sider</div>
-      </div>
-    </template>
-    <template #footer>
-      <div class="h-full p-2px">
-        <div class="card">Footer</div>
-      </div>
-    </template>
-    <div>
-      <div v-for="i in 50" :key="i" class="bg-#ddd">{{ i }}</div>
-    </div>
-  </admin-layout>
-  <div class="fixed right-0 top-120px h-480px overflow-auto px-12px whitespace-nowrap">
+    </AdminLayout>
+  </div>
+  <div class="fixed left-400px top-120px h-480px overflow-auto px-12px whitespace-nowrap z-101">
     <div class="font-bold">layoutMode:</div>
     <div v-for="item in layoutModeList" :key="item">
       <span class="pr-8px">{{ item }}</span>
@@ -101,15 +103,18 @@
       <button @click="scrollEl">滚动</button>
     </div>
   </div>
-  <!-- </div> -->
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
 import { useBoolean } from './hooks';
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { AdminLayout, SCROLL_EL_ID } from '@soybeanjs/vue-materials';
-import type { LayoutMode, ScrollMode } from '@soybeanjs/vue-materials';
+import AdminLayout from './libs/admin-layout/index.vue';
+import { LAYOUT_SCROLL_EL_ID } from './libs/admin-layout/shared';
+import type { LayoutMode, ScrollMode } from './libs/admin-layout/types';
+
+defineOptions({
+  name: 'App'
+});
 
 const layoutMode = ref<LayoutMode>('vertical');
 const layoutModeList: LayoutMode[] = ['vertical', 'horizontal'];
@@ -134,7 +139,7 @@ const { bool: rightFooter, toggle: toggleRightFooter } = useBoolean();
 const { bool: full, toggle: toggleFull } = useBoolean();
 
 function scrollEl() {
-  const dom = document.querySelector(`#${SCROLL_EL_ID}`);
+  const dom = document.querySelector(`#${LAYOUT_SCROLL_EL_ID}`);
   dom?.scrollTo({ top: 100, behavior: 'smooth' });
 }
 </script>

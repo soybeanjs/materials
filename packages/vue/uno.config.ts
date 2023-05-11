@@ -1,8 +1,8 @@
 import { defineConfig } from '@unocss/vite';
-import presetMini from '@unocss/preset-mini';
+import presetUno from '@unocss/preset-uno';
 import transformerCompileClass from '@unocss/transformer-compile-class';
 
 export default defineConfig({
-  presets: [presetMini()],
+  presets: [presetUno()],
   transformers: [transformerCompileClass({ trigger: ':soy:', classPrefix: 'soybeanjs-' })]
 });

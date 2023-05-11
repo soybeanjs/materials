@@ -1,4 +1,4 @@
-import type { App, Component, ComponentObjectPropsOptions } from 'vue-demi';
+import type { App, Component, ComponentObjectPropsOptions } from 'vue';
 import { colord, extend } from 'colord';
 import type { RgbColor } from 'colord';
 import mixPlugin from 'colord/plugins/mix';

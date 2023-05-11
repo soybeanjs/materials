@@ -1,9 +1,7 @@
 import { createApp } from 'vue';
 import 'uno.css';
-import '@soybeanjs/vue-materials/dist/style.css';
-import './styles/global.css';
-
 import App from './App.vue';
+import './styles/global.css';
 
 const app = createApp(App);
 
