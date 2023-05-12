@@ -1,5 +1,5 @@
 <template>
-  <div class="h-800px p-24px">
+  <div class="h-full">
     <AdminLayout
       :mode="layoutMode"
       :scroll-mode="scrollMode"
@@ -8,33 +8,36 @@
       :tab-visible="tabVisible"
       :sider-visible="siderVisible"
       :sider-collapse="siderCollapse"
+      :sider-collapsed-width="80"
       :full-content="full"
       :footer-visible="footerVisible"
+      :footer-height="64"
       :fixed-footer="fixedFooter"
       :right-footer="rightFooter"
+      class="bg-#f2f3f4"
     >
       <template #header>
-        <div class="h-full p-2px bg-red">
+        <div class="h-full p-2px bg-white rd-10px">
           <div class="card">Header</div>
         </div>
       </template>
       <template #tab>
-        <div class="h-full p-2px bg-green">
+        <div class="h-full p-2px bg-white rd-10px">
           <div class="card">Tab</div>
         </div>
       </template>
       <template #sider>
-        <div class="h-full p-2px bg-blue">
+        <div class="h-full p-2px bg-white rd-12px">
           <div class="card">Sider</div>
         </div>
       </template>
       <template #footer>
-        <div class="h-full p-2px bg-purple">
+        <div class="h-full p-2px bg-white rd-12px">
           <div class="card">Footer</div>
         </div>
       </template>
-      <div>
-        <div v-for="i in 50" :key="i" class="bg-#ddd">{{ i }}</div>
+      <div class="rd-4px">
+        <div v-for="i in 50" :key="i">{{ i }}</div>
       </div>
     </AdminLayout>
   </div>

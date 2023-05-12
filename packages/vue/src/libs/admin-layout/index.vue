@@ -46,7 +46,10 @@
         >
           <slot name="tab"></slot>
         </div>
-        <div></div>
+        <div
+          v-show="!fullContent && fixedHeaderAndTab"
+          :class="[style['layout-tab-placement'], ':soy: flex-shrink-0 overflow-hidden']"
+        ></div>
       </template>
 
       <!-- 侧边栏 -->
