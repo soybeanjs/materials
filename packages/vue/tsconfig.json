@@ -20,6 +20,6 @@
     },
     "types": ["vite/client"]
   },
-  "include": ["lib/index.ts"],
+  "include": ["src/index.ts"],
   "exclude": ["dist", "node_modules"]
 }

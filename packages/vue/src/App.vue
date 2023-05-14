@@ -1,106 +1,120 @@
 <template>
-  <div class="h-full">
+  <div class="admin-layout-demo h-full">
     <AdminLayout
       :mode="layoutMode"
       :scroll-mode="scrollMode"
       :fixed-top="fixedTop"
       :header-visible="headerVisible"
+      header-class="py-16px pr-16px"
+      :header-height="88"
       :tab-visible="tabVisible"
+      tab-class="pb-16px pr-16px"
+      :tab-height="64"
       :sider-visible="siderVisible"
+      sider-class="p-16px"
       :sider-collapse="siderCollapse"
-      :sider-collapsed-width="80"
+      :sider-collapsed-width="96"
       :full-content="full"
       :footer-visible="footerVisible"
-      :footer-height="64"
+      footer-class="py-16px pr-16px"
+      :footer-height="80"
       :fixed-footer="fixedFooter"
       :right-footer="rightFooter"
       class="bg-#f2f3f4"
     >
       <template #header>
-        <div class="h-full p-2px bg-white rd-10px">
-          <div class="card">Header</div>
+        <div class="h-full p-2px bg-white rd-12px">
+          <div>Header</div>
         </div>
       </template>
       <template #tab>
         <div class="h-full p-2px bg-white rd-10px">
-          <div class="card">Tab</div>
+          <div>Tab</div>
         </div>
       </template>
       <template #sider>
-        <div class="h-full p-2px bg-white rd-12px">
-          <div class="card">Sider</div>
+        <div class="h-full p-2px bg-white rd-16px">
+          <div>Sider</div>
         </div>
       </template>
       <template #footer>
         <div class="h-full p-2px bg-white rd-12px">
-          <div class="card">Footer</div>
+          <div>Footer</div>
         </div>
       </template>
-      <div class="rd-4px">
+      <div>
         <div v-for="i in 50" :key="i">{{ i }}</div>
       </div>
     </AdminLayout>
   </div>
-  <div class="fixed left-400px top-120px h-480px overflow-auto px-12px whitespace-nowrap z-101">
-    <div class="font-bold">layoutMode:</div>
-    <div v-for="item in layoutModeList" :key="item">
-      <span class="pr-8px">{{ item }}</span>
-      <input
-        type="radio"
-        name="layoutMode"
-        :value="item"
-        :checked="item === layoutMode"
-        class="cursor-pointer"
-        @change="setLayoutMode(item)"
-      />
+  <div class="config-card fixed left-400px top-200px w-320px h-480px overflow-auto px-12px whitespace-nowrap z-101">
+    <div class="flex">
+      <div class="flex-1">
+        <div class="font-bold">layoutMode:</div>
+        <div v-for="item in layoutModeList" :key="item">
+          <span class="pr-8px">{{ item }}</span>
+          <input
+            type="radio"
+            name="layoutMode"
+            :value="item"
+            :checked="item === layoutMode"
+            class="cursor-pointer"
+            @change="setLayoutMode(item)"
+          />
+        </div>
+      </div>
+      <div class="flex-1">
+        <div class="font-bold">scrollMode:</div>
+        <div v-for="item in scrollModeList" :key="item">
+          <span class="pr-8px">{{ item }}</span>
+          <input
+            type="radio"
+            name="scrollMode"
+            :value="item"
+            :checked="item === scrollMode"
+            class="cursor-pointer"
+            @change="setScrollMode(item)"
+          />
+        </div>
+      </div>
     </div>
-    <div class="font-bold">scrollMode:</div>
-    <div v-for="item in scrollModeList" :key="item">
-      <span class="pr-8px">{{ item }}</span>
-      <input
-        type="radio"
-        name="scrollMode"
-        :value="item"
-        :checked="item === scrollMode"
-        class="cursor-pointer"
-        @change="setScrollMode(item)"
-      />
-    </div>
-    <div class="pt-24px">
-      <span class="pr-8px">headerVisible</span>
-      <input class="cursor-pointer" type="checkbox" :checked="headerVisible" @change="toggleHeaderVisible" />
-    </div>
-    <div class="pt-24px">
-      <span class="pr-8px">tabVisible</span>
-      <input class="cursor-pointer" type="checkbox" :checked="tabVisible" @change="toggleTabVisible" />
-    </div>
-    <div class="pt-24px">
-      <span class="pr-8px">siderVisible</span>
-      <input class="cursor-pointer" type="checkbox" :checked="siderVisible" @change="toggleSiderVisible" />
-    </div>
-    <div class="pt-24px">
-      <span class="pr-8px">footerVisible</span>
-      <input class="cursor-pointer" type="checkbox" :checked="footerVisible" @change="toggleFooterVisible" />
-    </div>
-    <div class="pt-24px">
-      <span class="pr-8px">fixedTop</span>
-      <input class="cursor-pointer" type="checkbox" :checked="fixedTop" @change="togglefixedTop" />
-    </div>
-    <div class="pt-24px">
-      <span class="pr-8px">fixedFooter</span>
-      <input class="cursor-pointer" type="checkbox" :checked="fixedFooter" @change="toggleFixedFooter" />
-    </div>
-    <div class="pt-24px">
-      <span class="pr-8px">siderCollapse</span>
-      <input class="cursor-pointer" type="checkbox" :checked="siderCollapse" @change="toggleSiderCollapse" />
-    </div>
-    <div class="pt-24px">
-      <span class="pr-8px">rightFooter</span>
-      <input class="cursor-pointer" type="checkbox" :checked="rightFooter" @change="toggleRightFooter" />
-    </div>
-    <div class="pt-24px">
-      <span class="pr-8px">full content</span>
-      <input class="cursor-pointer" type="checkbox" :checked="full" @change="toggleFull" />
+    <div class="flex flex-wrap">
+      <div class="w-1/2 pt-24px">
+        <span class="pr-8px">headerVisible</span>
+        <input class="cursor-pointer" type="checkbox" :checked="headerVisible" @change="toggleHeaderVisible" />
+      </div>
+      <div class="w-1/2 pt-24px">
+        <span class="pr-8px">tabVisible</span>
+        <input class="cursor-pointer" type="checkbox" :checked="tabVisible" @change="toggleTabVisible" />
+      </div>
+      <div class="w-1/2 pt-24px">
+        <span class="pr-8px">siderVisible</span>
+        <input class="cursor-pointer" type="checkbox" :checked="siderVisible" @change="toggleSiderVisible" />
+      </div>
+      <div class="w-1/2 pt-24px">
+        <span class="pr-8px">footerVisible</span>
+        <input class="cursor-pointer" type="checkbox" :checked="footerVisible" @change="toggleFooterVisible" />
+      </div>
+      <div class="w-1/2 pt-24px">
+        <span class="pr-8px">fixedTop</span>
+        <input class="cursor-pointer" type="checkbox" :checked="fixedTop" @change="togglefixedTop" />
+      </div>
+      <div class="w-1/2 pt-24px">
+        <span class="pr-8px">fixedFooter</span>
+        <input class="cursor-pointer" type="checkbox" :checked="fixedFooter" @change="toggleFixedFooter" />
+      </div>
+      <div class="w-1/2 pt-24px">
+        <span class="pr-8px">siderCollapse</span>
+        <input class="cursor-pointer" type="checkbox" :checked="siderCollapse" @change="toggleSiderCollapse" />
+      </div>
+      <div class="pt-24px">
+        <span class="pr-8px">rightFooter</span>
+        <input class="cursor-pointer" type="checkbox" :checked="rightFooter" @change="toggleRightFooter" />
+      </div>
+      <div class="w-1/2 pt-24px">
+        <span class="pr-8px">full content</span>
+        <input class="cursor-pointer" type="checkbox" :checked="full" @change="toggleFull" />
+      </div>
     </div>
     <div class="pt-24px">
       <button @click="scrollEl">滚动</button>
@@ -147,8 +161,12 @@ function scrollEl() {
 }
 </script>
 
-<style scoped>
-.card {
-  @apply flex-center h-full b-1px b-solid b-#3491FA bg-#3491FA bg-opacity-20% rd-4px;
+<style lang="scss">
+#__SCROLL_EL_ID__ {
+  @include scrollbar(8px, #ccc);
+}
+
+.config-card {
+  @include scrollbar(8px, #ccc);
 }
 </style>

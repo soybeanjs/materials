@@ -10,6 +10,13 @@ export default defineConfig(configEnv => {
   const isBuildLib = viteEnv.VITE_LIB_MODE === '1';
 
   return {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: `@use "./src/styles/global.scss" as *;`
+        }
+      }
+    },
     plugins: [
       vue(),
       vueJsx({
@@ -21,8 +28,7 @@ export default defineConfig(configEnv => {
       exclude: ['vue-demi']
     },
     build: isBuildLib
-      ? {}
-      : {
+      ? {
           lib: {
             entry: path.resolve(process.cwd(), 'src/index.ts'),
             name: '@soybeanjs/vue-materials',
@@ -38,5 +44,6 @@ export default defineConfig(configEnv => {
             }
           }
         }
+      : {}
   };
 });

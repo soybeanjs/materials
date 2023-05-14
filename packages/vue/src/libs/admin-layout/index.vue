@@ -107,17 +107,13 @@
 </template>
 
 <script setup lang="ts">
-/**
- * 管理系统的布局组件
- */
-
 import { computed } from 'vue';
 import type { LayoutProps } from './types';
 import { LAYOUT_SCROLL_EL_ID, LAYOUT_MAX_Z_INDEX, createLayoutCssVars } from './shared';
 import style from './index.module.css';
 
 defineOptions({
-  name: 'AminLayout'
+  name: 'AdminLayout'
 });
 
 const props = withDefaults(defineProps<LayoutProps>(), {
