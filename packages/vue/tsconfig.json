@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "rootDir": "./src",
-    "outDir": "dist",
+    "outDir": "lib",
     "baseUrl": ".",
     "module": "ESNext",
     "target": "ESNext",
@@ -18,7 +18,7 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "types": ["vite/client"]
+    "types": ["vite/client"]   
   },
   "include": ["src/index.ts"],
   "exclude": ["dist", "node_modules"]
