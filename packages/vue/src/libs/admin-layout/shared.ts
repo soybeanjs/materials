@@ -4,6 +4,11 @@ import type { LayoutProps } from './types';
 /** 布局组件的滚动元素id默认值 */
 export const LAYOUT_SCROLL_EL_ID = '__SCROLL_EL_ID__';
 
+/**
+ * @deprecated 请使用 LAYOUT_SCROLL_EL_ID
+ */
+export const SCROLL_EL_ID = LAYOUT_SCROLL_EL_ID;
+
 /** 最大的zIndex值 */
 export const LAYOUT_MAX_Z_INDEX = 100;
 
