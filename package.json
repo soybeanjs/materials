@@ -27,6 +27,7 @@
     "update-pkg": "soy update-pkg",
     "init-git": "soy init-git-hooks",
     "tsx": "tsx",
+    "update-version": "npx bumpp package.json packages/*/package.json",
     "publish-pkg": "pnpm -r publish --access public",
     "release": "soy release && pnpm publish-pkg",
     "prepare": "pnpm -r run stub"
