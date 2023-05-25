@@ -20,23 +20,21 @@
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
-    "lint": "eslint . --fix --ext .ts,.tsx,.vue",
+    "lint": "eslint . --fix --ext .ts,.tsx,.vue,.json",
     "format": "soy prettier-format",
     "commit": "soy git-commit",
     "cleanup": "soy cleanup",
     "update-pkg": "soy update-pkg",
     "init-git": "soy init-git-hooks",
     "tsx": "tsx",
-    "update-version": "bumpp package.json packages/*/package.json",
     "publish-pkg": "pnpm -r publish --access public",
-    "release": "pnpm update-version && pnpm publish-pkg",
+    "release": "soy release && pnpm publish-pkg",
     "prepare": "pnpm -r run stub"
   },
   "devDependencies": {
-    "@soybeanjs/cli": "^0.1.9",
-    "bumpp": "^9.1.0",
-    "eslint": "^8.40.0",
-    "eslint-config-soybeanjs": "^0.3.6",
+    "@soybeanjs/cli": "^0.2.10",
+    "eslint": "^8.41.0",
+    "eslint-config-soybeanjs": "^0.4.5",
     "lint-staged": "13.2.2",
     "simple-git-hooks": "^2.8.1",
     "tsup": "^6.7.0",
@@ -48,6 +46,6 @@
     "pre-commit": "pnpm lint-staged"
   },
   "lint-staged": {
-    "*.{ts,tsx,vue}": "eslint . --fix --ext .ts,.tsx,.vue"
+    "*.{ts,tsx,vue,json}": "eslint . --fix --ext .ts,.tsx,.vue,.json"
   }
 }
