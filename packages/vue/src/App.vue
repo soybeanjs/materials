@@ -2,6 +2,7 @@
   <div class="admin-layout-demo h-full">
     <AdminLayout
       :mode="layoutMode"
+      :is-mobile="true"
       :scroll-mode="scrollMode"
       :fixed-top="fixedTop"
       :header-visible="headerVisible"
@@ -47,7 +48,7 @@
       </div>
     </AdminLayout>
   </div>
-  <div class="config-card fixed left-400px top-200px w-320px h-480px overflow-auto px-12px whitespace-nowrap z-101">
+  <div class="config-card fixed left-40px top-200px w-320px h-480px overflow-auto px-12px whitespace-nowrap z-101">
     <div class="flex">
       <div class="flex-1">
         <div class="font-bold">layoutMode:</div>

@@ -1,7 +1,7 @@
 /**
  * 头部配置
  */
-export interface HeaderConfig {
+interface HeaderConfig {
   /**
    * 头部可见
    * @default true
@@ -22,7 +22,7 @@ export interface HeaderConfig {
 /**
  * Tab页签配置
  */
-export interface TabConfig {
+interface TabConfig {
   /**
    * Tab页签可见
    * @default true
@@ -43,7 +43,7 @@ export interface TabConfig {
 /**
  * 侧边栏配置
  */
-export interface SiderConfig {
+interface SiderConfig {
   /**
    * 侧边栏可见
    * @default true
@@ -54,6 +54,11 @@ export interface SiderConfig {
    * @default ''
    */
   siderClass?: string;
+  /**
+   * 移动端的侧边栏样式名
+   * @default ''
+   */
+  mobileSiderClass?: string;
   /**
    * 侧边栏折叠状态
    * @default false
@@ -142,6 +147,8 @@ export interface LayoutProps extends HeaderConfig, TabConfig, SiderConfig, Conte
    * - {@link LayoutMode}
    */
   mode?: LayoutMode;
+  /** 是否是移动端 */
+  isMobile?: boolean;
   /**
    * 内容溢出时的出现滚动条的方式
    * - {@link ScrollMode}

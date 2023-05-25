@@ -16,6 +16,7 @@ type CssVarsProps = Pick<
   headerZIndex?: number;
   tabZIndex?: number;
   siderZIndex?: number;
+  mobileSiderZIndex?: number;
   footerZIndex?: number;
 };
 
@@ -32,6 +33,7 @@ function createCssVars(props: CssVarsProps) {
     '--soy-sider-width': `${props.siderWidth}px`,
     '--soy-sider-collapsed-width': `${props.siderCollapsedWidth}px`,
     '--soy-sider-z-index': props.siderZIndex,
+    '--soy-mobile-sider-z-index': props.mobileSiderZIndex,
     '--soy-footer-height': `${props.footerHeight}px`,
     '--soy-footer-z-index': props.footerZIndex
   };
@@ -42,6 +44,7 @@ function createCssVars(props: CssVarsProps) {
 export function createLayoutCssVars(props: LayoutProps) {
   const {
     mode,
+    isMobile,
     maxZIndex = LAYOUT_MAX_Z_INDEX,
     headerHeight,
     tabHeight,
@@ -50,10 +53,11 @@ export function createLayoutCssVars(props: LayoutProps) {
     footerHeight
   } = props;
 
-  const headerZIndex = maxZIndex - 2;
-  const tabZIndex = maxZIndex - 4;
-  const siderZIndex = mode === 'vertical' ? maxZIndex - 1 : maxZIndex - 3;
-  const footerZIndex = maxZIndex - 4;
+  const headerZIndex = maxZIndex - 3;
+  const tabZIndex = maxZIndex - 5;
+  const siderZIndex = mode === 'vertical' || isMobile ? maxZIndex - 1 : maxZIndex - 4;
+  const mobileSiderZIndex = isMobile ? maxZIndex - 2 : 0;
+  const footerZIndex = maxZIndex - 5;
 
   const cssProps: CssVarsProps = {
     headerHeight,
@@ -62,6 +66,7 @@ export function createLayoutCssVars(props: LayoutProps) {
     tabZIndex,
     siderWidth,
     siderZIndex,
+    mobileSiderZIndex,
     siderCollapsedWidth,
     footerHeight,
     footerZIndex

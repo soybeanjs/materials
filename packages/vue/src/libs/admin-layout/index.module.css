@@ -24,6 +24,14 @@
   z-index: var(--soy-sider-z-index);
 }
 
+.layout-mobile-sider {
+  z-index: var(--soy-sider-z-index);
+}
+
+.layout-mobile-sider-mask {
+  z-index: var(--soy-mobile-sider-z-index);
+}
+
 .layout-sider_collapsed {
   width: var(--soy-sider-collapsed-width);
   z-index: var(--soy-sider-z-index);

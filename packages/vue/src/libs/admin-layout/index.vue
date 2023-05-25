@@ -1,11 +1,11 @@
 <template>
-  <div :class="[':soy: relative h-full', props.commonClass]" :style="cssVars">
+  <div :class="[':soy: relative h-full', commonClass]" :style="cssVars">
     <div
-      :id="isWrapperScroll ? props.scrollElId : undefined"
+      :id="isWrapperScroll ? scrollElId : undefined"
       :class="[
         ':soy: flex flex-col h-full',
-        props.commonClass,
-        props.scrollWrapperClass,
+        commonClass,
+        scrollWrapperClass,
         { ':soy: overflow-y-auto': isWrapperScroll }
       ]"
     >
@@ -16,8 +16,8 @@
           :class="[
             style['layout-header'],
             ':soy: flex-shrink-0',
-            props.commonClass,
-            props.headerClass,
+            commonClass,
+            headerClass,
             headerLeftGapClass,
             { ':soy: absolute top-0 left-0 w-full': fixedHeaderAndTab }
           ]"
@@ -68,6 +68,24 @@
         </aside>
       </template>
 
+      <!-- 移动端的侧边栏 -->
+      <template v-if="showMobileSider">
+        <aside
+          :class="[
+            ':soy: absolute left-0 top-0 w-0 h-full bg-white',
+            commonClass,
+            mobileSiderClass,
+            style['layout-mobile-sider'],
+            siderCollapse ? 'overflow-hidden' : style['layout-sider']
+          ]"
+        >
+          <slot name="sider"></slot>
+        </aside>
+        <div
+          :class="[':soy: absolute left-0 top-0 w-full h-full bg-[rgba(0,0,0,0.2)]', style['layout-mobile-sider-mask']]"
+        ></div>
+      </template>
+
       <!-- 主体 -->
       <main
         :id="isContentScroll ? scrollElId : undefined"
@@ -92,7 +110,7 @@
             commonClass,
             footerClass,
             footerLeftGapClass,
-            { ':soy: absolute left-0 bottom-0 w-full': props.fixedFooter }
+            { ':soy: absolute left-0 bottom-0 w-full': fixedFooter }
           ]"
         >
           <slot name="footer"></slot>
@@ -158,7 +176,8 @@ const cssVars = computed(() => createLayoutCssVars(props));
 // 各部分的可见性
 const showHeader = computed(() => Boolean(slots.header) && props.headerVisible);
 const showTab = computed(() => Boolean(slots.tab) && props.tabVisible);
-const showSider = computed(() => Boolean(slots.sider) && props.siderVisible);
+const showSider = computed(() => !props.isMobile && Boolean(slots.sider) && props.siderVisible);
+const showMobileSider = computed(() => props.isMobile && Boolean(slots.sider) && props.siderVisible);
 const showFooter = computed(() => Boolean(slots.footer) && props.footerVisible);
 
 // 滚动模式
