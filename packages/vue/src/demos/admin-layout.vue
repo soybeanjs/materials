@@ -22,6 +22,7 @@
       :fixed-footer="fixedFooter"
       :right-footer="rightFooter"
       class="bg-#f2f3f4"
+      @click-mobile-sider-mask="toggleSiderCollapse"
     >
       <template #header>
         <div class="h-full p-2px bg-white rd-12px">

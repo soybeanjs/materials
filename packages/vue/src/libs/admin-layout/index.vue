@@ -84,6 +84,7 @@
         <div
           v-show="!siderCollapse"
           :class="[':soy: absolute left-0 top-0 w-full h-full bg-[rgba(0,0,0,0.2)]', style['layout-mobile-sider-mask']]"
+          @click="handleClickMask"
         ></div>
       </template>
 
@@ -154,6 +155,13 @@ const props = withDefaults(defineProps<LayoutProps>(), {
   footerHeight: 48,
   rightFooter: false
 });
+
+interface Emits {
+  /** 点击移动端模式下的蒙层 */
+  (e: 'click-mobile-sider-mask'): void;
+}
+
+const emit = defineEmits<Emits>();
 
 type SlotFn = (props?: Record<string, unknown>) => any;
 
@@ -228,6 +236,10 @@ const siderPaddingClass = computed(() => {
 
   return cls;
 });
+
+function handleClickMask() {
+  emit('click-mobile-sider-mask');
+}
 </script>
 
 <style scoped></style>
