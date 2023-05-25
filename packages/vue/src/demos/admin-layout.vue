@@ -2,6 +2,7 @@
   <div class="admin-layout-demo h-full">
     <AdminLayout
       :mode="layoutMode"
+      :is-mobile="true"
       :scroll-mode="scrollMode"
       :fixed-top="fixedTop"
       :header-visible="headerVisible"

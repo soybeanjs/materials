@@ -82,6 +82,7 @@
           <slot name="sider"></slot>
         </aside>
         <div
+          v-show="!siderCollapse"
           :class="[':soy: absolute left-0 top-0 w-full h-full bg-[rgba(0,0,0,0.2)]', style['layout-mobile-sider-mask']]"
         ></div>
       </template>
