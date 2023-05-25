@@ -1,4 +1,21 @@
 
+## v0.1.11
+
+[compare changes](https://github.com/soybeanjs/materials/compare/v0.1.10...v0.1.11)
+
+
+### 🩹 Fixes
+
+  - **components:** Fix AdminLayout: hide the mask when sider is not collapsed ([a5d9f09](https://github.com/soybeanjs/materials/commit/a5d9f09))
+
+### 🏡 Chore
+
+  - **projects:** Fix pkg version ([56599fe](https://github.com/soybeanjs/materials/commit/56599fe))
+
+### ❤️  Contributors
+
+- Soybean ([@soybeanjs](http://github.com/soybeanjs))
+
 ## v0.1.10
 
 [compare changes](https://github.com/soybeanjs/materials/compare/v0.1.9...v0.1.10)
