@@ -70,7 +70,7 @@
   color: var(--soy-primary-color2);
 }
 
-.chrome-tab .icon-close:hover { 
+.chrome-tab .icon-close:hover {
   font-size: 12px;
   color: #ffffff;
   background-color: #9ca3af;
