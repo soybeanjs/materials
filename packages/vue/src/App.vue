@@ -6,6 +6,7 @@
 
 <script setup lang="ts">
 import PageTabDemo from './demos/page-tab.vue';
+
 defineOptions({
   name: 'App'
 });
