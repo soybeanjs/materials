@@ -29,6 +29,7 @@ export default defineConfig(configEnv => {
     },
     build: isBuildLib
       ? {
+          copyPublicDir: false,
           lib: {
             entry: path.resolve(process.cwd(), 'src/index.ts'),
             name: '@soybeanjs/vue-materials',
