@@ -1,3 +1,24 @@
+# Changelog
+
+
+## v0.1.16...v0.2.0
+
+[compare changes](https://github.com/soybeanjs/materials/compare/v0.1.16...v0.2.0)
+
+### 🚀 Features
+
+- **projects:** Add demo show switch ([97b74bc](https://github.com/soybeanjs/materials/commit/97b74bc))
+
+### 🏡 Chore
+
+- **projects:** Add githublogen to release.yml ([3236fbd](https://github.com/soybeanjs/materials/commit/3236fbd))
+- **projects:** Remove changelogithub and update lint-staged config ([f8c4fae](https://github.com/soybeanjs/materials/commit/f8c4fae))
+- **projects:** Update deps and use soy lint-staged replace lint-staged ([eb4b7aa](https://github.com/soybeanjs/materials/commit/eb4b7aa))
+- Release v0.2.0 ([b74e411](https://github.com/soybeanjs/materials/commit/b74e411))
+
+### ❤️ Contributors
+
+- Soybean ([@soybeanjs](http://github.com/soybeanjs))
 
 ## v0.1.11
 
