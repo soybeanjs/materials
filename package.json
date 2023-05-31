@@ -20,7 +20,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
-    "lint": "eslint . --fix --ext .ts,.tsx,.vue,.json",
+    "lint": "eslint . --fix",
     "format": "soy prettier-format",
     "commit": "soy git-commit",
     "cleanup": "soy cleanup",
@@ -48,7 +48,6 @@
     "pre-commit": "pnpm lint-staged"
   },
   "lint-staged": {
-    "*.{js,mjs,jsx,ts,mts,tsx,json,vue,svelte,astro}": "eslint . --fix",
-    "*.!{js,mjs,jsx,ts,mts,tsx,json,vue,svelte,astro}": "format"
+    "*": "tsx ./scripts/lint.ts"
   }
 }
