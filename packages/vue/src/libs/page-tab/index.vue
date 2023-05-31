@@ -6,7 +6,7 @@
     <slot></slot>
     <template #suffix>
       <slot name="suffix">
-        <IconClose :class="[style['icon-close']]" @click="handleClose" />
+        <IconClose v-if="closable" :class="[style['icon-close']]" @click="handleClose" />
       </slot>
     </template>
   </component>

@@ -1,7 +1,5 @@
 {
   "compilerOptions": {
-    "rootDir": "./src",
-    "outDir": "lib",
     "baseUrl": ".",
     "module": "ESNext",
     "target": "ESNext",
@@ -20,6 +18,5 @@
     },
     "types": ["vite/client"]
   },
-  "include": ["src/index.ts"],
   "exclude": ["dist", "node_modules"]
 }

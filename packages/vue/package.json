@@ -19,7 +19,7 @@
     "build:lib": "cross-env VITE_LIB_MODE=1 npm-run-all typecheck vite:build dts rollup-dts clean-dts",
     "vite:build": "vite build",
     "typecheck": "vue-tsc --noEmit",
-    "dts": "vue-tsc --declaration --emitDeclarationOnly",
+    "dts": "vue-tsc -p tsconfig.build.json",
     "rollup-dts": "api-extractor run --local --verbose",
     "clean-dts": "rm -rf ./lib",
     "test": "npm run test3",
