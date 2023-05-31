@@ -29,11 +29,12 @@
     "tsx": "tsx",
     "update-version": "npx bumpp package.json packages/*/package.json",
     "publish-pkg": "pnpm -r publish --access public",
-    "release": "soy release && pnpm publish-pkg",
+    "release": "pnpm update-version && pnpm publish-pkg",
     "prepare": "pnpm -r run stub"
   },
   "devDependencies": {
     "@soybeanjs/cli": "^0.2.10",
+    "bumpp": "^9.1.0",
     "eslint": "^8.41.0",
     "eslint-config-soybeanjs": "^0.4.5",
     "lint-staged": "13.2.2",

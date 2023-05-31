@@ -7,6 +7,9 @@ importers:
       '@soybeanjs/cli':
         specifier: ^0.2.10
         version: 0.2.10
+      bumpp:
+        specifier: ^9.1.0
+        version: 9.1.0
       eslint:
         specifier: ^8.41.0
         version: 8.41.0
@@ -41,7 +44,7 @@ importers:
         version: 2.9.3
       vue-demi:
         specifier: 0.14.5
-        version: 0.14.5(vue@3.3.4)
+        version: 0.14.5(@vue/composition-api@1.7.0)(vue@3.3.4)
     devDependencies:
       '@microsoft/api-extractor':
         specifier: 7.35.0
@@ -736,6 +739,16 @@ packages:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.0
       '@jridgewell/sourcemap-codec': 1.4.14
+    dev: true
+
+  /@jsdevtools/ez-spawn@3.0.4:
+    resolution: {integrity: sha512-f5DRIOZf7wxogefH03RjMPMdBF7ADTWUMoOs9kaJo06EfwF+aFhMZMDZxHg/Xe12hptN9xoZjGso2fdjapBRIA==}
+    engines: {node: '>=10'}
+    dependencies:
+      call-me-maybe: 1.0.2
+      cross-spawn: 7.0.3
+      string-argv: 0.3.2
+      type-detect: 4.0.8
     dev: true
 
   /@microsoft/api-extractor-model@7.27.0(@types/node@20.2.3):
@@ -1758,6 +1771,21 @@ packages:
       semver: 7.5.1
     dev: true
 
+  /bumpp@9.1.0:
+    resolution: {integrity: sha512-m3+YD8uoa0VttG+RV4oKr3lK60gkUn1yPDaBTFwT7xrdJUsy7Jm0VYgx457HI3VPAOX8szLmy1x2y1QcvB+M8Q==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dependencies:
+      '@jsdevtools/ez-spawn': 3.0.4
+      c12: 1.4.1
+      cac: 6.7.14
+      fast-glob: 3.2.12
+      prompts: 2.4.2
+      semver: 7.5.1
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /bundle-name@3.0.0:
     resolution: {integrity: sha512-PKA4BeSvBpQKQ8iPOGCSiell+N8P+Tf1DlwqmYhpe2gAhKPHn8EYOxVT+ShuGmhg8lN8XiSlS80yiExKXrURlw==}
     engines: {node: '>=12'}
@@ -1865,6 +1893,10 @@ packages:
     dependencies:
       function-bind: 1.1.1
       get-intrinsic: 1.2.1
+    dev: true
+
+  /call-me-maybe@1.0.2:
+    resolution: {integrity: sha512-HpX65o1Hnr9HH25ojC1YGs7HCQLq0GCOibSaWER0eNpgJ/Z1MZv2mTc7+xh6WOPxbRVcmgbv4hGU+uSQ/2xFZQ==}
     dev: true
 
   /callsites@3.1.0:
@@ -3916,6 +3948,11 @@ packages:
       json-buffer: 3.0.1
     dev: true
 
+  /kleur@3.0.3:
+    resolution: {integrity: sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==}
+    engines: {node: '>=6'}
+    dev: true
+
   /kleur@4.1.5:
     resolution: {integrity: sha512-o+NO+8WrRiQEE4/7nwRJhN1HWpVmJm511pBHUxPLtp0BUISzlBplORYSmTclCnJvQq2tKu/sgl3xVpkc7ZWuQQ==}
     engines: {node: '>=6'}
@@ -5057,6 +5094,14 @@ packages:
       sisteransi: 1.0.5
     dev: true
 
+  /prompts@2.4.2:
+    resolution: {integrity: sha512-NxNv/kLguCA7p3jE8oL2aEBsrJWgAakBpgmgK6lpPWV+WuOmY6r2/zbAVnP+T8bQlA0nzHXSJSJW0Hq7ylaD2Q==}
+    engines: {node: '>= 6'}
+    dependencies:
+      kleur: 3.0.3
+      sisteransi: 1.0.5
+    dev: true
+
   /prop-types@15.8.1:
     resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}
     dependencies:
@@ -5984,6 +6029,11 @@ packages:
       prelude-ls: 1.2.1
     dev: true
 
+  /type-detect@4.0.8:
+    resolution: {integrity: sha512-0fr/mIH1dlO+x7TlcMy+bIDqKPsw/70tVyeHW787goQjhmqaZe10uwLujubK9q9Lg6Fiho1KUKDYz0Z7k7g5/g==}
+    engines: {node: '>=4'}
+    dev: true
+
   /type-fest@0.20.2:
     resolution: {integrity: sha512-Ne+eE4r0/iWnpAxD852z3A+N0Bt5RN//NjJwRd2VFHEmrywxf5vsZlh4R6lixl6B+wz/8d+maTSAkN1FIkI3LQ==}
     engines: {node: '>=10'}
@@ -6200,7 +6250,7 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vue-demi@0.14.5(vue@3.3.4):
+  /vue-demi@0.14.5(@vue/composition-api@1.7.0)(vue@3.3.4):
     resolution: {integrity: sha512-o9NUVpl/YlsGJ7t+xuqJKx8EBGf1quRhCiT6D/J0pfwmk9zUwYkC7yrF4SZCe6fETvSM3UNL2edcbYrSyc4QHA==}
     engines: {node: '>=12'}
     hasBin: true
@@ -6212,6 +6262,7 @@ packages:
       '@vue/composition-api':
         optional: true
     dependencies:
+      '@vue/composition-api': 1.7.0(vue@3.3.4)
       vue: 3.3.4
     dev: false
 
