@@ -4,7 +4,7 @@
   "private": true,
   "description": "SoybeanJS's component materials, include Vue, React，Solid and Svelte",
   "author": {
-    "name": "SoybeanJS",
+    "name": "Soybean",
     "email": "honghuangdc@gmail.com",
     "url": "https://github.com/soybeanjs"
   },
@@ -27,14 +27,12 @@
     "update-pkg": "soy update-pkg",
     "init-git": "soy init-git-hooks",
     "tsx": "tsx",
-    "update-version": "npx bumpp package.json packages/*/package.json",
     "publish-pkg": "pnpm -r publish --access public",
-    "release": "pnpm update-version && pnpm publish-pkg",
+    "release": "soy release",
     "prepare": "pnpm -r run stub"
   },
   "devDependencies": {
     "@soybeanjs/cli": "0.5.0",
-    "bumpp": "9.1.0",
     "eslint": "8.42.0",
     "eslint-config-soybeanjs": "0.4.8",
     "simple-git-hooks": "2.8.1",
@@ -45,5 +43,6 @@
   "simple-git-hooks": {
     "commit-msg": "pnpm soy git-commit-verify",
     "pre-commit": "pnpm soy lint-staged"
-  }
+  },
+  "github-token": "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"
 }
