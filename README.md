@@ -4,4 +4,4 @@ SoybeanJS 的组件物料
 
 ## Vue 组件物料
 
-[@soybeanjs/vue-aterials](./packages/vue/README.md)
+[@soybeanjs/vue-materials](./packages/vue/README.md)
